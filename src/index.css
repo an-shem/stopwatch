@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+}
+
+li {
+  list-style-type: none;
+  /* Убираем маркеры */
+}
+
+.react-icons {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.wert {
+  display: block;
+  width: 1000px;
+}
