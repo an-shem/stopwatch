@@ -12,6 +12,7 @@ export default function App() {
   const [isStart, setIsStart] = useState(false);
   const [counter, setCounter] = useState(0);
   const [isReset, setIsReset] = useState(false);
+  const [previousTime, setPreviousTime] = useState(0);
 
   let subscription = useRef();
 
@@ -66,12 +67,24 @@ export default function App() {
     setIsStart(false);
   };
 
+  const doubleTap = () => {
+    if (!previousTime) {
+      setPreviousTime(Date.now());
+    } else {
+      let currentTime = Date.now();
+      if (currentTime - previousTime <= 300) {
+        wait();
+      }
+      setPreviousTime(currentTime);
+    }
+  };
+
   return (
     <AppWrap>
       <Scoreboard time={time} />
       <WrapperButton>
         <Button titel="Start / Stop" handelOnClick={start} />
-        <Button titel="Wait" handelOnClick={wait} />
+        <Button titel="Wait" handelOnClick={doubleTap} />
         <Button titel="Reset" handelOnClick={reset} />
       </WrapperButton>
     </AppWrap>
