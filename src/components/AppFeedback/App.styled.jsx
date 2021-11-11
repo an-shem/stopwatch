@@ -1,14 +1,18 @@
 import styled from '@emotion/styled';
 
 export const AppWrap = styled.div`
-  padding: 40px;
+  /* padding: 150px; */
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 600px;
+  height: 600px;
   margin: 10px auto 0;
+  color: #5c6061;
   border: 1px solid #c9c1c1;
-  border-radius: 30px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.37) inset;
+  /* box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1); */
 `;
 
 export const WrapperButton = styled.div`
