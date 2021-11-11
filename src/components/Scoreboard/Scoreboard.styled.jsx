@@ -10,6 +10,7 @@ export const ScoreboardStopwatch = styled.div`
   padding: 40px;
   margin-bottom: 30px;
   text-align: center;
+  background-color: #dddbb5a1;
   border-radius: 30px;
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 `;
