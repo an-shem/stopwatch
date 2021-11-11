@@ -1,12 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Observable } from 'rxjs';
-// import { interval } from 'rxjs';
-
 import timeСonversion from '../../helpers/timeСonversion';
-
 import Scoreboard from '../Scoreboard';
 import Button from '../Button';
-
 import { AppWrap, WrapperButton } from './App.styled';
 
 const initialStateTime = { hours: '00', mins: '00', secs: '00' };
@@ -18,7 +14,6 @@ export default function App() {
   const [isReset, setIsReset] = useState(false);
 
   let subscription = useRef();
-  console.log('subscription', subscription.current);
 
   useEffect(() => {
     const objTime = timeСonversion(counter * 1000);
@@ -57,16 +52,17 @@ export default function App() {
     setTime(initialStateTime);
     setIsStart(false);
     setCounter(0);
+    subscription.current = null;
   };
 
   const reset = () => {
+    if (!subscription.current) return;
     stop();
     setIsReset(true);
   };
 
   const wait = () => {
-    console.log('wait');
-    subscription.current.unsubscribe();
+    subscription.current && subscription.current.unsubscribe();
     setIsStart(false);
   };
 
